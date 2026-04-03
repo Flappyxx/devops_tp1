@@ -20,13 +20,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up JDK 21
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '21'
-          cache: 'gradle'
-
       - name: Build Docker images
         run: |
           docker build -t hello-service:latest -f devops_tp1/Dockerfile .
