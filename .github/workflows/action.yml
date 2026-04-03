@@ -22,6 +22,6 @@ jobs:
 
       - name: Build Docker images
         run: |
-          docker build -t hello-service:latest -f devops_tp1/Dockerfile .
+          docker build -t hello-service:latest ./devops_tp1
 
 
