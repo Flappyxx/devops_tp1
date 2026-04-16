@@ -1,4 +1,4 @@
-package java.com.example.devops_tp1;
+package com.example.devops_tp1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
