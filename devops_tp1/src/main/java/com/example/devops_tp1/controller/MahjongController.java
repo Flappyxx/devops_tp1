@@ -2,25 +2,26 @@ package com.example.devops_tp1.controller;
 
 import com.example.devops_tp1.model.Hand;
 import com.example.devops_tp1.model.Wall;
+import com.example.devops_tp1.service.MahjongService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/mahjong")
 public class MahjongController {
 
+    private final MahjongService mahjongService;
+
+    public MahjongController(MahjongService mahjongService) {
+        this.mahjongService = mahjongService;
+    }
+
     @GetMapping("/wall")
-    public Wall generateWall() {
-        return new Wall();
+    public Wall getWall() {
+        return mahjongService.getWall();
     }
 
     @PostMapping("/hand/starting")
-    public Hand drawStartingHand(@RequestBody Wall wall) {
-        Hand hand = new Hand();
-
-        for (int i = 0; i < 13; i++) {
-            hand.add(wall.draw());
-        }
-
-        return hand;
+    public Hand drawStartingHand() {
+        return mahjongService.drawStartingHand();
     }
 }
