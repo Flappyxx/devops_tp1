@@ -20,7 +20,7 @@ public class MahjongController {
         return mahjongService.getWall();
     }
 
-    @PostMapping("/hand/starting")
+    @GetMapping("/hand/starting")
     public Hand drawStartingHand() {
         return mahjongService.drawStartingHand();
     }
