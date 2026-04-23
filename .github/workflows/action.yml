@@ -12,6 +12,7 @@ permissions:
   actions: read
   security-events: write
   pull-requests: write
+  id-token: write
 
 jobs:
   build-and-test:
@@ -43,6 +44,7 @@ jobs:
           files: ./devops_tp1/build/reports/jacoco/test/jacocoTestReport.xml
           flags: unittests
           name: codecov-umbrella
+          use_oidc: true
           fail_ci_if_error: false
 
       - name: Build Docker images
